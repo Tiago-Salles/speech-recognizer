@@ -13,7 +13,9 @@ def recognize():
             for voice in speaker.getProperty("voices"):
                 if(voice.id == "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0"):
                     speaker.setProperty("voice", voice.id)
-            speaker.say(command)
+                    
+            if "play" in command:
+                speaker.say("Playing the music")
             print(command)
             speaker.runAndWait()
             
